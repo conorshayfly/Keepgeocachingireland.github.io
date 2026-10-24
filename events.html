@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Geocaching Events in Ireland: Meet &amp; Greets, CITOs &amp; Bashes | Keep Geocaching Ireland</title>
+  <meta name="description" content="Find and host geocaching events across Ireland: meet and greets, CITO clean-ups, mega events and cache bashes in every county.">
+  <link rel="canonical" href="https://keepgeocachingireland.github.io/events.html">
+  <meta name="theme-color" content="#0b2e22">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M16%202C9.9%202%205%206.7%205%2012.6%205%2020.4%2016%2030%2016%2030s11-9.6%2011-17.4C27%206.7%2022.1%202%2016%202z%22%20fill%3D%22%23e9a23b%22/%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2212.5%22%20r%3D%224.5%22%20fill%3D%22%230b2e22%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Keep Geocaching Ireland">
+  <meta property="og:title" content="Geocaching Events in Ireland: Meet &amp; Greets, CITOs &amp; Bashes | Keep Geocaching Ireland">
+  <meta property="og:description" content="Find and host geocaching events across Ireland: meet and greets, CITO clean-ups, mega events and cache bashes in every county.">
+  <meta property="og:url" content="https://keepgeocachingireland.github.io/events.html">
+  <meta property="og:image" content="https://keepgeocachingireland.github.io/og-image.png">
+  <meta property="og:locale" content="en_IE">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <div class="page-head"><div class="container"><h1>Events</h1><p>Meet &amp; greets, CITOs, mega events and bashes across Ireland.</p></div></div>
+
+  <main class="container" style="padding-top:1.5rem">
+    <div id="demoNotice"></div>
+    <div class="authbar" id="authbar"></div>
+
+    <div class="filters">
+      <div><label for="fType">Type</label><select id="fType"><option value="">All types</option></select></div>
+      <div><label for="fCounty">County</label><select id="fCounty"><option value="">All counties</option></select></div>
+      <div style="flex:0 0 auto;display:flex;gap:.5rem">
+        <button class="btn outline" id="pastBtn">Show past events</button>
+        <button class="btn" id="addBtn">+ Add event</button>
+      </div>
+    </div>
+
+    <div class="card" id="formCard" style="display:none;margin-bottom:1.2rem">
+      <h3>Add an event</h3>
+      <div id="formMsg"></div>
+      <form id="evForm">
+        <div class="row">
+          <div style="flex:2 1 300px"><label for="eTitle">Title</label><input id="eTitle" required maxlength="120"></div>
+          <div><label for="eType">Type</label><select id="eType"></select></div>
+          <div><label for="eCounty">County</label><select id="eCounty" required><option value="">Choose…</option></select></div>
+        </div>
+        <div class="row">
+          <div><label for="eStart">Starts</label><input id="eStart" type="datetime-local" required></div>
+          <div><label for="eEnd">Ends (optional)</label><input id="eEnd" type="datetime-local"></div>
+        </div>
+        <div class="row">
+          <div><label for="eVenue">Venue / meeting point</label><input id="eVenue" maxlength="200" placeholder="e.g. Car park at Howth Summit"></div>
+          <div><label for="eCoords">Coordinates (optional)</label><input id="eCoords" placeholder="N 53° 21.123 W 006° 15.456, ITM or O 15904 34671"><small id="coordHint" style="color:var(--muted)"></small></div>
+        </div>
+        <label for="eDesc">Details</label><textarea id="eDesc" maxlength="2000" placeholder="What to bring, parking, who it's for, accessibility…"></textarea>
+        <p style="font-size:.85rem;color:var(--muted)">Please don't put exact coordinates of a hidden cache here. Use a public meeting point. Events must follow the Geocaching Code of Conduct.</p>
+        <button class="btn" type="submit">Publish event</button>
+        <button class="btn outline" type="button" id="cancelBtn">Cancel</button>
+      </form>
+    </div>
+
+    <div id="list"><p>Loading…</p></div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="main.js"></script>
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="forums-data.js"></script>
+  <script src="events-data.js"></script>
+  <script src="grids.js"></script>
+  <script src="coords.js"></script>
+  <script src="auth-ui.js"></script>
+  <script src="events.js"></script>
+</body>
+</html>

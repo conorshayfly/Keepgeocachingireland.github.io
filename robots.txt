@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://keepgeocachingireland.github.io/sitemap.xml

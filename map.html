@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ireland Geocaching Map: Coordinates &amp; Waypoints | Keep Geocaching Ireland</title>
+  <meta name="description" content="Interactive map of Ireland for geocachers: street and topo layers, jump to coordinates including ITM and Irish Grid, and save waypoints.">
+  <link rel="canonical" href="https://keepgeocachingireland.github.io/map.html">
+  <meta name="theme-color" content="#0b2e22">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M16%202C9.9%202%205%206.7%205%2012.6%205%2020.4%2016%2030%2016%2030s11-9.6%2011-17.4C27%206.7%2022.1%202%2016%202z%22%20fill%3D%22%23e9a23b%22/%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2212.5%22%20r%3D%224.5%22%20fill%3D%22%230b2e22%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Keep Geocaching Ireland">
+  <meta property="og:title" content="Ireland Geocaching Map: Coordinates &amp; Waypoints | Keep Geocaching Ireland">
+  <meta property="og:description" content="Interactive map of Ireland for geocachers: street and topo layers, jump to coordinates including ITM and Irish Grid, and save waypoints.">
+  <meta property="og:url" content="https://keepgeocachingireland.github.io/map.html">
+  <meta property="og:image" content="https://keepgeocachingireland.github.io/og-image.png">
+  <meta property="og:locale" content="en_IE">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <div class="page-head"><div class="container"><h1>Ireland map</h1><p>Tap the map to grab coordinates and save waypoints.</p></div></div>
+
+  <main class="container" style="padding-top:1.5rem">
+    <div class="notice"><strong>Coming soon:</strong> live cache data from the Geocaching API. For now this is a planning map with waypoints saved in your browser.</div>
+    <div class="map-layout">
+      <div id="map"></div>
+      <aside class="card">
+        <h3>Go to coordinates</h3>
+        <input id="goIn" placeholder="N 53° 21.123 W 006° 15.456, ITM, or O 15904 34671">
+        <div style="display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap">
+          <button class="btn small" id="goBtn">Go</button>
+          <button class="btn small outline" id="locBtn">My location</button>
+        </div>
+        <p id="goMsg" style="font-size:.85rem"></p>
+        <h3>Saved waypoints</h3>
+        <div id="wpList"><p style="font-size:.9rem">None yet. Click the map, then "Save".</p></div>
+        <button class="btn small danger" id="clearBtn" style="margin-top:.6rem">Clear all</button>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="main.js"></script>
+  <script src="grids.js"></script>
+  <script src="coords.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
